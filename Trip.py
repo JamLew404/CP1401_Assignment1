@@ -15,17 +15,14 @@ class Country:
         if name.isalpha() is False:
                 print("Country can only have letters")
 
-        # amount = int(input("Enter your amount: "))
-        # amount = float(amount)
-        # print({}, {}, {} + format(amount, ".2f"))
-
     def __str__(self, **kwargs):
         return " {} {} {} ".format(self.name, self.currency_code, self.currency_symbol)
 
     def amount_format(self, amount):
+        amount = float(amount)
         if amount < 0:
             raise Error("The amount cannot be less than 0")
-        amount = float(amount)
+        return "{}{}".format(self.currency_symbol, format(amount, ".2f"))
 
 
 class Details:
