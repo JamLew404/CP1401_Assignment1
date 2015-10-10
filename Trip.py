@@ -51,4 +51,9 @@ class Details:
         # Enter location into table
         self.locations.append((country_name, start_date, end_date))
 
+    @staticmethod
+    def is_empty():
+        if not Details.locations:
+            return "There is nothing in Locations"
+        return "There is something in Locations"
 
