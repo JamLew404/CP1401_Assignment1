@@ -7,7 +7,6 @@ class Error(Exception):
 
 
 class Country:
-    # This is used to define the values
     def __init__(self, name, currency_code, currency_symbol):
         self.name = name
         self.currency_code = currency_code
@@ -26,5 +25,23 @@ class Country:
 
 
 class Details:
+    locations = []
+
     def __int__(self, locations):
         self.locations = locations
+
+    def add(self, country_name, start_date, end_date):
+        country_name = str(country_name)
+        # Set date formats and make errors for incorrect dates entered
+        try:
+            start_date.datetime.datetime.strftime("%Y, %m, %d")
+        except ValueError:
+            raise Error("Incorrect date format entered")
+        try:
+            end_date.datetime.datetime.strftime("%Y, %m, %d")
+        except ValueError:
+            raise Error("Incorrect date format entered")
+        if end_date < start_date:
+            raise Error("You must enter a start date that is before the end date")
+        # Enter location into table
+        self.locations.append((country_name, start_date, end_date))
