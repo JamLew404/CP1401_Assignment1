@@ -43,7 +43,7 @@ class Details:
             raise Error("Incorrect date format entered")
         # exception if add is already in locations
         except:
-            if self.add not in self.locations:
+            if self.add in self.locations:
                 return None
         # if statement for raising error when the start date is after the end date
         if end_date < start_date:
