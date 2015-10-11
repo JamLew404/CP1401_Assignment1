@@ -42,3 +42,5 @@ if __name__ == "__main__":
     print("This module is running by itself")
 else:
     print("This module is being imported")
+
+print(get_details('australia'))

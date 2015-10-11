@@ -11,10 +11,11 @@ class Country:
         self.name = name
         self.currency_code = currency_code
         self.currency_symbol = currency_symbol
+        # checks that the string consists of alphabetic characters only.
         if name.isalpha() is False:
                 print("Country can only have letters")
 
-    def __str__(self, **kwargs):
+    def __str__(self):
         return " {} {} {} ".format(self.name, self.currency_code, self.currency_symbol)
 
     def amount_format(self, amount):

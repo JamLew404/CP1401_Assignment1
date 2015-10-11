@@ -24,18 +24,19 @@ import Currency
 # print(Currency.convert("19.99", "USD", "AUD"))
 # print(Currency.convert("27.80", "AUD", "USD"))
 #
-print(Currency.get_details("Unknown"))
-print(Currency.get_details("Japanese"))
-print(Currency.get_details(" "))
-print(Currency.get_details("Australia"))
-print(Currency.get_details("Japan"))
-print(Currency.get_details("Hong Kong"))
-
-# print(Trip.Details.is_empty())
-# print(Trip.Details.locations)
-# # Trip.Details.add("Australia", "2014/01/02", "2015/02/04")
-# print(Trip.Details.is_empty())
-# print(Trip.Details.locations)
-
+# print(Currency.get_details("Unknown"))
+# print(Currency.get_details("Japanese"))
+# print(Currency.get_details(" "))
+# print(Currency.get_details("Australia"))
+# print(Currency.get_details("Japan"))
+# print(Currency.get_details("Hong Kong"))
+#
+print(Trip.Details.is_empty())
+print(Trip.Details.locations)
+Trip.Details.add("Australia", "2014/01/02", "2015/02/04")
+print(Trip.Details.is_empty())
+print(Trip.Details.locations)
+#
 # Australia = Trip.Country("Australia", "AUD", "$")
 # print(Australia)
+
