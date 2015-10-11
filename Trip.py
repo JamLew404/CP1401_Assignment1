@@ -46,7 +46,7 @@ class Details:
             if self.add in self.locations:
                 return None
         # if statement for raising error when the start date is after the end date
-        if end_date < start_date:
+        if end_date > start_date:
             raise Error("You must enter a start date that is before the end date")
         # Enter location into table
         self.locations.append((country_name, start_date, end_date))
@@ -57,3 +57,7 @@ class Details:
             return "There is nothing in Locations"
         return "There is something in Locations"
 
+if __name__ == "__main__":
+    print("This module is running by itself")
+else:
+    print("This module is being imported")

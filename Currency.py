@@ -9,8 +9,8 @@ error_string = "class=bld"
 
 
 def convert(amount, first_currency, second_currency):
-    url_string = "https://www.google.com/finance/converter".format(amount, first_currency.upper(),
-                                                                   second_currency.upper())
+    url_string = "https://www.google.com/finance/converter?a={}&from={}&to={" \
+                 "}".format(amount, first_currency.upper(), second_currency.upper())
     result = web_utility.load_page(url_string)
     if first_currency == second_currency:
         return incorrect_value
@@ -33,14 +33,6 @@ def get_details(country_name):
             return tuple()
     input_file.close()
     return()
-
-
-# # Used to test if the code works
-#     conversion_amount = (str(input("How much would you like to convert?")))
-#     first_country = (str(input("Select the first country")))
-#     second_country = (str(input("Select the second country")))
-#     result = (convert(amount_to_convert, first_country, second_country))
-
 
 if __name__ == "__main__":
     print("This module is running by itself")
