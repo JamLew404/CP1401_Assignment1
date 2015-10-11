@@ -1,7 +1,9 @@
 __author__ = 'James'
 
+# Imports the web_utility for use in this module
 import web_utility
 
+# A constant value for use across the module
 incorrect_value = -1
 error_string = "class=bld"
 
@@ -23,12 +25,14 @@ def convert(amount, first_currency, second_currency):
 # Converts the country information from a text file into a tuple
 
 def get_details(country_name):
-    input_file = open('currency_details.txt', mode='r', encoding='utf-8')
+    if country_name == " ":
+        return tuple()
+    input_file = open('currency_details.txt', encoding='utf-8')
     lines = input_file.readlines()
 
     for line in lines:
-        if country_name in line:
-                return tuple(list(line.strip('\n').split(',')))
+        if line.startswith(country_name):
+                return tuple(line.strip().split(','))
         elif country_name not in line:
             return tuple()
     input_file.close()
